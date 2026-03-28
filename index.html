@@ -705,6 +705,171 @@
         border-top: 1px solid var(--border);
       }
     }
+    /* ============ CORNER PEEL ============ */
+    .corner-peel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      animation: peelHint 2s ease-in-out 1s 1;
+    }
+    @keyframes peelHint {
+      0%, 100% { width: 50px; height: 50px; }
+      40% { width: 80px; height: 80px; }
+      60% { width: 80px; height: 80px; }
+    }
+    .corner-peel .peel-fold {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 50px 50px 0;
+      border-color: transparent #2a2520 transparent transparent;
+      transition: border-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(-2px 2px 4px rgba(0,0,0,0.2));
+    }
+    @keyframes foldHint {
+      0%, 100% { border-width: 0 50px 50px 0; }
+      40% { border-width: 0 80px 80px 0; }
+      60% { border-width: 0 80px 80px 0; }
+    }
+    .corner-peel .peel-fold {
+      animation: foldHint 2s ease-in-out 1s 1;
+    }
+    .corner-peel .peel-back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 0 0 50px;
+      border-color: var(--cream-dark) transparent transparent transparent;
+      transition: border-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes backHint {
+      0%, 100% { border-width: 50px 0 0 50px; }
+      40% { border-width: 80px 0 0 80px; }
+      60% { border-width: 80px 0 0 80px; }
+    }
+    .corner-peel .peel-back {
+      animation: backHint 2s ease-in-out 1s 1;
+    }
+    .corner-peel .peel-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      background: #2a2520;
+      border-bottom-left-radius: 6px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .corner-peel .peel-content span {
+      opacity: 0;
+      white-space: nowrap;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      color: #d4c5a9;
+      transition: opacity 0.25s ease 0.15s;
+    }
+    .corner-peel:hover .peel-fold {
+      border-width: 0 150px 150px 0;
+      animation: none;
+    }
+    .corner-peel:hover .peel-back {
+      border-width: 150px 0 0 150px;
+      animation: none;
+    }
+    .corner-peel:hover .peel-content {
+      width: 150px;
+      height: 150px;
+    }
+    .corner-peel:hover .peel-content span {
+      opacity: 1;
+    }
+    .corner-peel:hover {
+      width: 150px;
+      height: 150px;
+      animation: none;
+    }
+
+    /* ============ FOOTER ============ */
+    .site-footer {
+      background: #1a1a1a;
+      color: #a09888;
+      padding: 48px 40px 32px;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-top {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #d4c5a9;
+    }
+    .footer-brand::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: #d4c5a9;
+      border-radius: 50%;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #8a8070;
+    }
+    .footer-divider {
+      height: 1px;
+      background: #333;
+      margin-bottom: 24px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .footer-credit a {
+      color: #d4c5a9;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-credit a:hover { color: #fff; }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .footer-social a {
+      color: #8a8070;
+      transition: color 0.15s;
+    }
+    .footer-social a:hover { color: #fff; }
+    .footer-copy { color: #555; }
+
     @media (max-width: 600px) {
       .tab-btn {
         font-size: 11px;
@@ -717,6 +882,9 @@
         min-width: 120px;
         font-size: 11px;
       }
+      .site-footer { padding: 32px 20px 24px; }
+      .footer-top { flex-direction: column; gap: 8px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
     }
 
     /* ============ LOADING ============ */
@@ -789,6 +957,13 @@
 <body>
 
   <!-- HEADER -->
+  <!-- CORNER PEEL -->
+  <div class="corner-peel">
+    <div class="peel-back"></div>
+    <div class="peel-content"><span>Made by Lulu</span></div>
+    <div class="peel-fold"></div>
+  </div>
+
   <div class="header">
     <h1>World's Best <span>on the Map</span></h1>
     <p>Explore the world's finest restaurants, bars, and more — all on one map</p>
@@ -1622,6 +1797,30 @@
     });
 
   </script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand">Best on Map</span>
+      <span class="footer-tagline">Curated travel, hotels & the good life.</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-credit">MADE BY <a href="https://www.instagram.com/lulululuda" target="_blank" rel="noopener">Lulu Yao</a></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/lulululuda" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="mailto:hello@bestonmap.top" aria-label="Email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
+        </a>
+      </div>
+      <div class="footer-copy">&copy; 2026 BESTONMAP</div>
+    </div>
+  </footer>
 
   <!-- GOOGLE MAPS API -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2DEKgUGZBsN_dmwICxMQBuUb4Zxcz5cA&libraries=places&callback=initMap"></script>
