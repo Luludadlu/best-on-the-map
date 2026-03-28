@@ -705,109 +705,7 @@
         border-top: 1px solid var(--border);
       }
     }
-    /* ============ CORNER PEEL ============ */
-    .corner-peel {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 9999;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      animation: peelHint 2s ease-in-out 1s 1;
-    }
-    @keyframes peelHint {
-      0%, 100% { width: 50px; height: 50px; }
-      40% { width: 80px; height: 80px; }
-      60% { width: 80px; height: 80px; }
-    }
-    .corner-peel .peel-fold {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 50px 50px 0;
-      border-color: transparent #2a2520 transparent transparent;
-      transition: border-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: drop-shadow(-2px 2px 4px rgba(0,0,0,0.2));
-    }
-    @keyframes foldHint {
-      0%, 100% { border-width: 0 50px 50px 0; }
-      40% { border-width: 0 80px 80px 0; }
-      60% { border-width: 0 80px 80px 0; }
-    }
-    .corner-peel .peel-fold {
-      animation: foldHint 2s ease-in-out 1s 1;
-    }
-    .corner-peel .peel-back {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 50px 0 0 50px;
-      border-color: var(--cream-dark) transparent transparent transparent;
-      transition: border-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    @keyframes backHint {
-      0%, 100% { border-width: 50px 0 0 50px; }
-      40% { border-width: 80px 0 0 80px; }
-      60% { border-width: 80px 0 0 80px; }
-    }
-    .corner-peel .peel-back {
-      animation: backHint 2s ease-in-out 1s 1;
-    }
-    .corner-peel .peel-content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      overflow: hidden;
-      background: #2a2520;
-      border-bottom-left-radius: 6px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 30px 20px 0 0;
-    }
-    .corner-peel .peel-content span {
-      opacity: 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-style: italic;
-      letter-spacing: 0.5px;
-      color: #d4c5a9;
-      text-align: right;
-      line-height: 1.5;
-      transition: opacity 0.25s ease 0.15s;
-    }
-    .corner-peel:hover .peel-fold {
-      border-width: 0 180px 180px 0;
-      animation: none;
-    }
-    .corner-peel:hover .peel-back {
-      border-width: 180px 0 0 180px;
-      animation: none;
-    }
-    .corner-peel:hover .peel-content {
-      width: 180px;
-      height: 180px;
-    }
-    .corner-peel:hover .peel-content span {
-      opacity: 1;
-    }
-    .corner-peel:hover {
-      width: 180px;
-      height: 180px;
-      animation: none;
-    }
-
-    /* ============ FOOTER ============ */
+/* ============ FOOTER ============ */
     .site-footer {
       background: #1a1a1a;
       color: #a09888;
@@ -959,14 +857,7 @@
 <body>
 
   <!-- HEADER -->
-  <!-- CORNER PEEL -->
-  <div class="corner-peel">
-    <div class="peel-back"></div>
-    <div class="peel-content"><span>Made by<br>Lulu</span></div>
-    <div class="peel-fold"></div>
-  </div>
-
-  <div class="header">
+<div class="header">
     <h1>World's Best <span>on the Map</span></h1>
     <p>Explore the world's finest restaurants, bars, and more — all on one map</p>
   </div>
