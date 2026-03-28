@@ -132,34 +132,33 @@
       background: var(--cream);
     }
     .tab-btn {
-      padding: 14px 28px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: rgba(255,255,255,0.6);
+      padding: 10px 24px;
+      border: 1.5px solid transparent;
+      border-radius: 999px;
+      background: transparent;
       font-family: 'Inter', sans-serif;
       font-size: clamp(12px, 1.3vw, 15px);
       font-weight: 500;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
       white-space: nowrap;
       color: var(--ink-muted);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      box-shadow: none;
     }
     .tab-btn:hover {
       color: var(--ink);
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      transform: translateY(-1px);
+      border-color: var(--ink);
+      background: #fff;
+      box-shadow: 3px 3px 0 0 var(--ink);
     }
     .tab-btn.active {
-      background: var(--active-color);
-      color: #fff;
+      color: var(--active-color);
       border-color: var(--active-color);
+      background: #fff;
       font-weight: 600;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      transform: translateY(-1px);
+      box-shadow: 3px 3px 0 0 var(--active-color);
     }
 
     /* ============ FILTER BAR ============ */
@@ -234,11 +233,28 @@
       height: 100%;
     }
     /* Custom InfoWindow */
-    .gm-style-iw-d { overflow: auto !important; max-height: 400px !important; }
+    .gm-style-iw-d { overflow: auto !important; max-height: 400px !important; padding-right: 0 !important; }
+    .gm-style-iw-c { padding: 12px !important; }
+    .gm-style-iw-chr { display: none !important; }
+    .gm-style-iw-c button.gm-ui-hover-effect { display: none !important; }
+    .gm-style-iw-tc { display: none !important; }
+    .info-window { position: relative; }
+    .info-window .iw-close-btn {
+      position: absolute; top: 0; right: 0; z-index: 10;
+      width: 36px; height: 36px; border: none; border-radius: 0 0 0 8px;
+      background: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: rgba(255,255,255,0.9); line-height: 1;
+      transition: color 0.15s; padding: 0;
+    }
+    .info-window .iw-close-btn:hover { color: #fff; }
     .info-window {
-      max-width: 320px;
+      width: 280px;
+      max-width: 280px;
       font-family: 'Inter', sans-serif;
       padding-bottom: 4px;
+      overflow: hidden;
+      box-sizing: border-box;
     }
     .info-window .iw-img {
       width: 100%;
@@ -248,6 +264,7 @@
       margin-bottom: 10px;
       display: block;
       background: var(--cream-dark);
+      box-sizing: border-box;
     }
     .info-window .iw-rank {
       display: inline-block;
@@ -552,23 +569,25 @@
 
     .card {
       background: rgba(255,255,255,0.5);
-      border-radius: 2px;
+      border-radius: 4px;
       overflow: hidden;
       cursor: pointer;
-      transition: all 0.35s ease;
-      border: 1px solid var(--border);
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1.5px solid var(--border);
       box-shadow: none;
       display: flex;
       flex-direction: column;
       flex-shrink: 0;
     }
     .card:hover {
-      background: rgba(255,255,255,0.8);
-      box-shadow: 0 4px 20px rgba(26,26,26,0.06);
+      background: #fff;
+      border-color: var(--active-color);
+      box-shadow: 3px 3px 0 0 var(--active-color);
     }
     .card.active {
       border-color: var(--active-color);
-      background: rgba(255,255,255,0.8);
+      background: #fff;
+      box-shadow: 3px 3px 0 0 var(--active-color);
     }
 
     .card-img {
@@ -1519,6 +1538,7 @@
       const imgUrl = getInfoWindowImageUrl(item);
       const content = `
         <div class="info-window">
+          <button class="iw-close-btn" onclick="infoWindow.close()" aria-label="Close">&times;</button>
           <img class="iw-img" src="${imgUrl}" alt="${item.name}" onerror="handleIwImgError(this)">
           <span class="iw-rank">#${item.rank}</span>
           <h3>${item.name}</h3>
