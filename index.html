@@ -771,17 +771,19 @@
       border-bottom-left-radius: 6px;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 30px 20px 0 0;
     }
     .corner-peel .peel-content span {
       opacity: 0;
-      white-space: nowrap;
       font-family: 'Cormorant Garamond', serif;
       font-size: 15px;
       font-style: italic;
       letter-spacing: 0.5px;
       color: #d4c5a9;
+      text-align: right;
+      line-height: 1.5;
       transition: opacity 0.25s ease 0.15s;
     }
     .corner-peel:hover .peel-fold {
@@ -960,7 +962,7 @@
   <!-- CORNER PEEL -->
   <div class="corner-peel">
     <div class="peel-back"></div>
-    <div class="peel-content"><span>Made by Lulu</span></div>
+    <div class="peel-content"><span>Made by<br>Lulu</span></div>
     <div class="peel-fold"></div>
   </div>
 
