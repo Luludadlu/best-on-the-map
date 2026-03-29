@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
   <title>World's Best Restaurants, Bars & Hotels on the Map | Interactive Guide 2025</title>
   <meta name="description" content="Explore the world's finest restaurants, bars, and hotels — all on one interactive map. Featuring World's 50 Best Restaurants, Asia's 50 Best, World's Best Bars, and Condé Nast Traveler Gold List.">
   <meta name="keywords" content="World's 50 Best Restaurants, Asia's 50 Best Restaurants, World's Best Bars, Condé Nast Traveler Gold List, best restaurants map, best bars map, best hotels map, fine dining, travel guide">
@@ -707,68 +708,25 @@
     }
 /* ============ FOOTER ============ */
     .site-footer {
-      background: #1a1a1a;
-      color: #a09888;
-      padding: 48px 40px 32px;
-      font-family: 'Inter', sans-serif;
-    }
-    .footer-top {
-      display: flex;
-      align-items: baseline;
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-    .footer-brand {
+      background: var(--cream);
+      border-top: 1px solid var(--cream-dark);
+      padding: 14px 0;
+      text-align: center;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 600;
-      color: #d4c5a9;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: #999;
     }
-    .footer-brand::before {
-      content: '';
-      display: inline-block;
-      width: 8px; height: 8px;
-      background: #d4c5a9;
-      border-radius: 50%;
-      margin-right: 12px;
-      vertical-align: middle;
-    }
-    .footer-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-style: italic;
-      color: #8a8070;
-    }
-    .footer-divider {
-      height: 1px;
-      background: #333;
-      margin-bottom: 24px;
-    }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .footer-credit a {
-      color: #d4c5a9;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .footer-credit a:hover { color: #fff; }
-    .footer-social {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .footer-social a {
-      color: #8a8070;
+    .site-footer a {
+      color: #999;
+      text-decoration: none;
       transition: color 0.15s;
     }
-    .footer-social a:hover { color: #fff; }
-    .footer-copy { color: #555; }
+    .site-footer a:hover { color: #666; }
+    .site-footer .heart {
+      color: #C47D5A;
+      font-style: normal;
+    }
 
     @media (max-width: 600px) {
       .tab-btn {
@@ -782,9 +740,7 @@
         min-width: 120px;
         font-size: 11px;
       }
-      .site-footer { padding: 32px 20px 24px; }
-      .footer-top { flex-direction: column; gap: 8px; }
-      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .site-footer { padding: 12px 0; }
     }
 
     /* ============ LOADING ============ */
@@ -1693,26 +1649,7 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-top">
-      <span class="footer-brand">Best on Map</span>
-      <span class="footer-tagline">Curated travel, hotels & the good life.</span>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <div class="footer-credit">MADE BY <a href="https://www.instagram.com/lulululuda" target="_blank" rel="noopener">Lulu Yao</a></div>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/lulululuda" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="mailto:hello@bestonmap.top" aria-label="Email">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
-        </a>
-      </div>
-      <div class="footer-copy">&copy; 2026 BESTONMAP</div>
-    </div>
+    Made with <span class="heart">&hearts;</span> by <a href="https://www.instagram.com/lulululuda" target="_blank" rel="noopener">Lulu</a>
   </footer>
 
   <!-- GOOGLE MAPS API -->
