@@ -89,6 +89,12 @@
       --color-condenast: #C47D5A;
       --color-condenast-light: #F5ECE6;
       --color-condenast-bg: #E8D4C6;
+      --color-best-may: #E07A5F;
+      --color-best-may-light: #FDF0EC;
+      --color-best-may-bg: #F5D6CC;
+      --color-cheapest: #2D9CDB;
+      --color-cheapest-light: #EBF5FB;
+      --color-cheapest-bg: #C8E6F5;
       --active-color: var(--color-restaurants);
       --active-light: var(--color-restaurants-light);
       --active-bg: var(--color-restaurants-bg);
@@ -298,6 +304,17 @@
       line-height: 1.6;
       color: var(--ink-light);
       margin-bottom: 8px;
+    }
+    .info-window .iw-highlight-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--active-color);
+      background: var(--active-light);
+      border: 1px solid var(--active-color);
+      border-radius: 999px;
     }
     .info-window .iw-links {
       display: flex;
@@ -660,6 +677,18 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+    .card-highlight-tag {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 2px 8px;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--active-color);
+      background: var(--active-light);
+      border: 1px solid var(--active-color);
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
     .card-link {
       display: inline-block;
       margin-top: 6px;
@@ -833,6 +862,12 @@
     <button class="tab-btn" data-tab="condenast">
       Condé Nast Traveler
     </button>
+    <button class="tab-btn" data-tab="best-may">
+      Best in May
+    </button>
+    <button class="tab-btn" data-tab="cheapest">
+      Cheapest 2026
+    </button>
   </div>
 
   <!-- FILTER BAR -->
@@ -872,6 +907,8 @@
   <script src="data/asia-restaurants.js"></script>
   <script src="data/bars.js"></script>
   <script src="data/condenast.js"></script>
+  <script src="data/best-may.js"></script>
+  <script src="data/cheapest.js"></script>
   <script src="data/transport.js"></script>
 
   <!-- MAIN SCRIPT -->
@@ -887,6 +924,8 @@
       'asia-restaurants': () => window.DATA_ASIA_RESTAURANTS || [],
       'bars': () => window.DATA_BARS || [],
       'condenast': () => window.DATA_CONDENAST || [],
+      'best-may': () => window.DATA_BEST_MAY || [],
+      'cheapest': () => window.DATA_CHEAPEST || [],
     };
 
     // ============ IMAGE URL ============
@@ -965,6 +1004,8 @@
       'asia-restaurants': { color: '#6a9a78', light: '#edf5ef', bg: '#d4e5d8' },
       'bars': { color: '#8a7aaa', light: '#f0ecf5', bg: '#ddd6ea' },
       'condenast': { color: '#c4a04e', light: '#f7f2e6', bg: '#e8dfc8' },
+      'best-may': { color: '#E07A5F', light: '#FDF0EC', bg: '#F5D6CC' },
+      'cheapest': { color: '#2D9CDB', light: '#EBF5FB', bg: '#C8E6F5' },
     };
 
     // ============ INIT MAP ============
@@ -1055,6 +1096,8 @@
       'asia-restaurants': '🥢',
       'bars': '🍸',
       'condenast': '✨',
+      'best-may': '☀️',
+      'cheapest': '💰',
     };
 
     function renderList(data) {
@@ -1081,6 +1124,8 @@
                 <div class="card-name">${item.name}</div>
                 <div class="card-location">📍 ${item.city}, ${item.country}</div>
                 <div class="card-desc">${item.description}</div>
+                ${item.highlight ? `<span class="card-highlight-tag">☀️ ${item.highlight}</span>` : ''}
+                ${item.dailyCost ? `<span class="card-highlight-tag">💰 ${item.dailyCost}</span>` : ''}
                 <div class="card-meta" id="card-meta-${i}"></div>
                 ${renderCardTransportTags(item.city)}
                 ${item.website ? `<a class="card-link" href="${item.website}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit website →</a>` : ''}
@@ -1575,6 +1620,8 @@
           <h3>${item.name}</h3>
           <div class="iw-location">📍 ${item.city}, ${item.country}</div>
           <div class="iw-desc">${item.description}</div>
+          ${item.highlight ? `<div class="iw-highlight-tag">☀️ ${item.highlight}</div>` : ''}
+          ${item.dailyCost ? `<div class="iw-highlight-tag">💰 ${item.dailyCost}</div>` : ''}
           <div class="iw-links">
             ${item.website ? `<a class="iw-link" href="${item.website}" target="_blank" rel="noopener">Visit website →</a>` : ''}
             ${activeTab === 'condenast' ? getSkyscannerHotelLink(item) : ''}
