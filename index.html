@@ -892,8 +892,14 @@
     // ============ IMAGE URL ============
     function getImageUrl(item, width, height) {
       if (item.image) return item.image;
-      const seed = encodeURIComponent(item.name.replace(/\s+/g, '-').toLowerCase());
-      return `https://picsum.photos/seed/${seed}/${width}/${height}`;
+      // Check Places API cache first
+      const cacheKey = `${item.name}_${item.city}`;
+      const place = placeCache[cacheKey];
+      if (place && place.photos && place.photos.length > 0) {
+        return place.photos[0].getUrl({ maxWidth: width, maxHeight: height });
+      }
+      // Return null — card will show placeholder until Places data loads
+      return null;
     }
 
     function handleImgError(img) {
@@ -1068,7 +1074,7 @@
       panel.innerHTML = `<div class="list-count">${data.length} places</div>` +
         data.map((item, i) => `
           <div class="card" data-index="${i}" onclick="focusItem(${i})" onmouseenter="highlightMarker(${i})" onmouseleave="unhighlightMarker(${i})">
-            <img class="card-img" src="${getImageUrl(item, 400, 280)}" alt="${item.name}" loading="lazy" onerror="handleImgError(this)">
+            ${(() => { const url = getImageUrl(item, 400, 280); return url ? `<img class="card-img" src="${url}" alt="${item.name}" loading="lazy" onerror="handleImgError(this)">` : `<div class="card-img-placeholder">${tabEmoji[activeTab] || '📍'}</div>`; })()}
             <div class="card-content">
               <div class="card-rank">${item.rank}</div>
               <div class="card-body">
@@ -1564,7 +1570,7 @@
       const content = `
         <div class="info-window">
           <button class="iw-close-btn" onclick="infoWindow.close()" aria-label="Close">&times;</button>
-          <img class="iw-img" src="${imgUrl}" alt="${item.name}" onerror="handleIwImgError(this)">
+          ${imgUrl ? `<img class="iw-img" src="${imgUrl}" alt="${item.name}" onerror="handleIwImgError(this)">` : `<div style="height:100px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:8px;font-size:32px;margin-bottom:10px">${tabEmoji[activeTab] || '📍'}</div>`}
           <span class="iw-rank">#${item.rank}</span>
           <h3>${item.name}</h3>
           <div class="iw-location">📍 ${item.city}, ${item.country}</div>
