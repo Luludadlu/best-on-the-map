@@ -8,7 +8,8 @@ window.DATA_BEST_MAY = [
     lng: 25.4615,
     description: "Perfect pre-summer weather with iconic sunsets over the caldera, whitewashed villages, and volcanic beaches — all without the June-August crowds.",
     website: "https://www.visitgreece.gr/islands/cyclades/santorini/",
-    highlight: "22-25°C, fewer crowds"
+    highlight: "22-25°C, fewer crowds",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Oia%2C_Santorini_HDR.jpg"
   },
   {
     rank: 2,
@@ -19,7 +20,8 @@ window.DATA_BEST_MAY = [
     lng: 115.2625,
     description: "Dry season begins with lush green post-monsoon landscapes. Ideal for temple visits, rice terrace treks, surf, and world-class wellness retreats.",
     website: "https://www.indonesia.travel/gb/en/destinations/bali-nusa-tenggara/bali",
-    highlight: "Dry season starts, lush & green"
+    highlight: "Dry season starts, lush & green",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Tanah_Lot_Bali.jpg"
   },
   {
     rank: 3,
@@ -30,7 +32,8 @@ window.DATA_BEST_MAY = [
     lng: 2.1686,
     description: "Warm but not scorching temperatures as beach season begins. Vibrant street life, Gaudí architecture, tapas bars, and La Boqueria market at their best.",
     website: "https://www.barcelonaturisme.com/",
-    highlight: "Beach season begins, 20-24°C"
+    highlight: "Beach season begins, 20-24°C",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wbread_background.jpg"
   },
   {
     rank: 4,
@@ -41,7 +44,8 @@ window.DATA_BEST_MAY = [
     lng: 14.6027,
     description: "Mediterranean spring at its finest — dramatic coastal drives, lemon groves in full bloom, charming cliffside villages, and fresh seafood by the sea.",
     website: "https://www.italia.it/en/campania/amalfi-coast",
-    highlight: "Spring blooms, coastal perfection"
+    highlight: "Spring blooms, coastal perfection",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Amalfi_coast_view.jpg"
   },
   {
     rank: 5,
@@ -52,7 +56,8 @@ window.DATA_BEST_MAY = [
     lng: 135.7681,
     description: "Post-cherry blossom green season transforms the city. Stunning bamboo groves, moss gardens, and ancient temples amid fresh spring foliage — with fewer tourists.",
     website: "https://kyoto.travel/en",
-    highlight: "Green season, fewer tourists"
+    highlight: "Green season, fewer tourists",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_res.JPG"
   },
   {
     rank: 6,
@@ -63,7 +68,8 @@ window.DATA_BEST_MAY = [
     lng: -7.9811,
     description: "Comfortable warm weather before the scorching summer. Explore vibrant souks, stunning riads, Jardin Majorelle, and the bustling Jemaa el-Fnaa square.",
     website: "https://www.visitmorocco.com/en/travel/marrakech",
-    highlight: "Warm, pre-summer sweet spot"
+    highlight: "Warm, pre-summer sweet spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Koutoubia_Mosque%2CMarrakech%2CMorocco.jpg"
   },
   {
     rank: 7,
@@ -74,7 +80,8 @@ window.DATA_BEST_MAY = [
     lng: 18.0944,
     description: "Shoulder season means warm Adriatic waters and the stunning Old Town walls without peak-season crowds. Game of Thrones filming locations and island-hopping await.",
     website: "https://www.dubrovnik.hr/en",
-    highlight: "Shoulder season, warm sea"
+    highlight: "Shoulder season, warm sea",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Dubrovnik_crop.jpg"
   },
   {
     rank: 8,
@@ -85,7 +92,8 @@ window.DATA_BEST_MAY = [
     lng: -72.5450,
     description: "Dry season begins with clear skies perfect for trekking the Inca Trail. The ancient citadel emerges from morning mist with stunning mountain backdrop.",
     website: "https://www.peru.travel/en/attractions/machu-picchu",
-    highlight: "Dry season, clear trekking skies"
+    highlight: "Dry season, clear trekking skies",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg"
   },
   {
     rank: 9,
@@ -96,7 +104,8 @@ window.DATA_BEST_MAY = [
     lng: 18.4241,
     description: "Autumn brings mild weather, wine harvest season in nearby Stellenbosch, and clear Table Mountain views. Whale watching season also begins along the coast.",
     website: "https://www.capetown.travel/",
-    highlight: "Autumn harvest, mild & clear"
+    highlight: "Autumn harvest, mild & clear",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Table_Mountain_DanieVDM.jpg"
   },
   {
     rank: 10,
@@ -107,6 +116,7 @@ window.DATA_BEST_MAY = [
     lng: -9.1393,
     description: "Sunny and mild with outdoor cafés buzzing across the city's seven hills. An affordable European gem with stunning azulejo tiles, pastéis de nata, and fado music.",
     website: "https://www.visitlisboa.com/en",
-    highlight: "Sunny, mild, affordable Europe"
+    highlight: "Sunny, mild, affordable Europe",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/41/Lisbon_%2836831596786%29_%28cropped%29.jpg"
   }
 ];

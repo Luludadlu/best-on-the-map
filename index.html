@@ -863,10 +863,10 @@
       Condé Nast Traveler
     </button>
     <button class="tab-btn" data-tab="best-may">
-      Best in May
+      Best Places to Travel in May
     </button>
     <button class="tab-btn" data-tab="cheapest">
-      Cheapest 2026
+      Cheapest Places to Travel in 2026
     </button>
   </div>
 
@@ -1128,7 +1128,7 @@
                 ${item.dailyCost ? `<span class="card-highlight-tag">💰 ${item.dailyCost}</span>` : ''}
                 <div class="card-meta" id="card-meta-${i}"></div>
                 ${renderCardTransportTags(item.city)}
-                ${item.website ? `<a class="card-link" href="${item.website}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit website →</a>` : ''}
+                ${item.website && activeTab !== 'best-may' && activeTab !== 'cheapest' ? `<a class="card-link" href="${item.website}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit website →</a>` : ''}
               </div>
             </div>
           </div>
@@ -1622,23 +1622,25 @@
           <div class="iw-desc">${item.description}</div>
           ${item.highlight ? `<div class="iw-highlight-tag">☀️ ${item.highlight}</div>` : ''}
           ${item.dailyCost ? `<div class="iw-highlight-tag">💰 ${item.dailyCost}</div>` : ''}
-          <div class="iw-links">
+          ${activeTab !== 'best-may' && activeTab !== 'cheapest' ? `<div class="iw-links">
             ${item.website ? `<a class="iw-link" href="${item.website}" target="_blank" rel="noopener">Visit website →</a>` : ''}
             ${activeTab === 'condenast' ? getSkyscannerHotelLink(item) : ''}
-          </div>
-          <div class="iw-google-section" id="${reviewId}">
+          </div>` : ''}
+          ${activeTab !== 'best-may' && activeTab !== 'cheapest' ? `<div class="iw-google-section" id="${reviewId}">
             <div class="iw-loading-reviews">Loading Google reviews...</div>
-          </div>
+          </div>` : ''}
           ${renderTransportHtml(item.city)}
         </div>
       `;
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
 
-      // Fetch reviews after InfoWindow is rendered
-      google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-        fetchGoogleReviews(item, reviewId);
-      });
+      // Fetch reviews after InfoWindow is rendered (skip for destination tabs)
+      if (activeTab !== 'best-may' && activeTab !== 'cheapest') {
+        google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
+          fetchGoogleReviews(item, reviewId);
+        });
+      }
     }
 
     // ============ CARD INTERACTIONS ============

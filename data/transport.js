@@ -519,5 +519,127 @@ window.DATA_TRANSPORT = {
       { name: "Khasab Airport", code: "KHS", distance: "40 km", lat: 26.1709, lng: 56.2406 }
     ],
     trains: []
+  },
+
+  // === BEST IN MAY DESTINATIONS ===
+  "Santorini": {
+    airports: [
+      { name: "Santorini Airport", code: "JTR", distance: "6 km", lat: 36.3992, lng: 25.4793 }
+    ],
+    trains: []
+  },
+  "Amalfi": {
+    airports: [
+      { name: "Naples International Airport", code: "NAP", distance: "65 km", lat: 40.8860, lng: 14.2908 }
+    ],
+    trains: [
+      { name: "Salerno Station", lines: "Trenitalia high-speed, 25 km", lat: 40.6754, lng: 14.7710 },
+      { name: "Vietri sul Mare", lines: "Regional, closest to Amalfi", lat: 40.6672, lng: 14.7289 }
+    ]
+  },
+  "Marrakech": {
+    airports: [
+      { name: "Marrakech Menara Airport", code: "RAK", distance: "6 km", lat: 31.6069, lng: -8.0363 }
+    ],
+    trains: [
+      { name: "Marrakech Railway Station", lines: "ONCF national rail", lat: 31.6328, lng: -8.0148 }
+    ]
+  },
+  "Dubrovnik": {
+    airports: [
+      { name: "Dubrovnik Airport", code: "DBV", distance: "20 km", lat: 42.5614, lng: 18.2682 }
+    ],
+    trains: []
+  },
+  "Aguas Calientes": {
+    airports: [
+      { name: "Alejandro Velasco Astete Airport (Cusco)", code: "CUZ", distance: "110 km", lat: -13.5357, lng: -71.9388 }
+    ],
+    trains: [
+      { name: "Aguas Calientes Station", lines: "PeruRail, Inca Rail from Cusco/Ollantaytambo", lat: -13.1547, lng: -72.5233 }
+    ]
+  },
+  "Cape Town": {
+    airports: [
+      { name: "Cape Town International Airport", code: "CPT", distance: "20 km", lat: -33.9649, lng: 18.6017 }
+    ],
+    trains: [
+      { name: "Cape Town Station", lines: "Metrorail, long-distance", lat: -33.9228, lng: 18.4254 }
+    ]
+  },
+
+  // === CHEAPEST DESTINATIONS ===
+  "Hanoi": {
+    airports: [
+      { name: "Noi Bai International Airport", code: "HAN", distance: "25 km", lat: 21.2212, lng: 105.8070 }
+    ],
+    trains: [
+      { name: "Hanoi Railway Station", lines: "Vietnam Railways, Reunification Express", lat: 21.0253, lng: 105.8413 }
+    ]
+  },
+  "Siem Reap": {
+    airports: [
+      { name: "Siem Reap–Angkor International Airport", code: "SAI", distance: "40 km", lat: 13.1120, lng: 103.8133 }
+    ],
+    trains: []
+  },
+  "La Paz": {
+    airports: [
+      { name: "El Alto International Airport", code: "LPB", distance: "13 km", lat: -16.5133, lng: -68.1923 }
+    ],
+    trains: [
+      { name: "Mi Teleférico (Cable Car)", lines: "10 urban cable car lines", lat: -16.4973, lng: -68.1503 }
+    ]
+  },
+  "Kathmandu": {
+    airports: [
+      { name: "Tribhuvan International Airport", code: "KTM", distance: "6 km", lat: 27.6966, lng: 85.3591 }
+    ],
+    trains: []
+  },
+  "Cairo": {
+    airports: [
+      { name: "Cairo International Airport", code: "CAI", distance: "22 km", lat: 30.1219, lng: 31.4056 }
+    ],
+    trains: [
+      { name: "Cairo Ramses Station", lines: "Egyptian National Railways", lat: 30.0622, lng: 31.2467 },
+      { name: "Giza Station", lines: "National rail, near pyramids", lat: 30.0098, lng: 31.2072 }
+    ]
+  },
+  "Tbilisi": {
+    airports: [
+      { name: "Tbilisi International Airport", code: "TBS", distance: "17 km", lat: 41.6692, lng: 44.9547 }
+    ],
+    trains: [
+      { name: "Tbilisi Central Station", lines: "Georgian Railway", lat: 41.7269, lng: 44.7873 }
+    ]
+  },
+  "Medellín": {
+    airports: [
+      { name: "José María Córdova Airport", code: "MDE", distance: "35 km", lat: 6.1645, lng: -75.4231 }
+    ],
+    trains: [
+      { name: "San Antonio (Metro)", lines: "Medellín Metro, MetroCable", lat: 6.2518, lng: -75.5636 }
+    ]
+  },
+  "Chiang Mai": {
+    airports: [
+      { name: "Chiang Mai International Airport", code: "CNX", distance: "4 km", lat: 18.7669, lng: 98.9625 }
+    ],
+    trains: [
+      { name: "Chiang Mai Railway Station", lines: "State Railway of Thailand", lat: 18.7520, lng: 99.0157 }
+    ]
+  },
+  "Stone Town": {
+    airports: [
+      { name: "Abeid Amani Karume Airport", code: "ZNZ", distance: "8 km", lat: -6.2220, lng: 39.2249 }
+    ],
+    trains: []
+  },
+  "Oaxaca": {
+    airports: [
+      { name: "Oaxaca International Airport", code: "OAX", distance: "8 km", lat: 16.9999, lng: -96.7266 }
+    ],
+    trains: []
   }
 };
